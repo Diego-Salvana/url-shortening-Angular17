@@ -1,0 +1,56 @@
+@use '../../../sass/variables';
+
+.card {
+   background-color: white;
+   position: relative;
+   padding: 80px 30px 42px;
+   border-radius: 5px;
+   margin: auto;
+   margin-top: 90px;
+   max-width: 330px;
+
+   &__icon {
+      background-color: variables.$DarkViolet;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 88px;
+      height: 88px;
+      margin: auto;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+
+      img {
+         width: 40px;
+         height: 40px;
+      }
+   }
+
+   &__title {
+      @extend %title;
+      font-size: 22px;
+      letter-spacing: unset;
+      margin-bottom: 18px;
+   }
+
+   &__description {
+      @extend %description-text;
+      font-size: 15px;
+      line-height: 1.7;
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      text-align: left;
+      max-width: 350px;
+      margin-top: 0;
+
+      &__icon {
+         margin: unset;
+         left: 35px;
+      }
+   }
+}

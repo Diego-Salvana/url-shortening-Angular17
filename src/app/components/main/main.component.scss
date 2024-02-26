@@ -1,0 +1,123 @@
+@use 'sass:color';
+@use '../../../sass/variables';
+
+:host {
+   display: block;
+   background-color: lighten(variables.$Gray, 18);
+   width: 100%;
+}
+
+main {
+   text-align: center;
+   padding: 0 24px 80px;
+   position: relative;
+   max-width: variables.$maxWidthMain;
+   margin: auto;
+
+   .shortened-urls__list {
+      margin-top: 22px;
+   }
+
+   .subtitle {
+      @extend %title;
+      font-size: 28px;
+      margin-top: 90px;
+      margin-bottom: 22px;
+   }
+
+   .subtitle-description {
+      @extend %description-text;
+      font-size: 16px;
+      line-height: 1.8;
+   }
+
+   .info {
+      position: relative;
+
+      &__bg {
+         background-color: variables.$Cyan;
+         position: absolute;
+         width: 8px;
+         height: 100%;
+         margin: auto;
+         left: 0;
+         right: 0;
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      max-width: 1500px;
+      padding: 0 variables.$paddingBodyDesktop 118px;
+
+      .subtitle {
+         font-size: 40px;
+         margin-top: 125px;
+         margin-bottom: 16px;
+      }
+
+      .subtitle-description {
+         font-size: 18px;
+         max-width: 520px;
+         margin: auto;
+      }
+
+      .info {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 100px;
+
+         &__bg {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            transform: translateY(-20px);
+         }
+
+         @for $var from 1 through 2 {
+            .mt-#{$var} {
+               margin-top: 45px * $var;
+            }
+         }
+      }
+   }
+}
+
+.boost {
+   background: url('../../../assets/images/bg-boost-mobile.svg'), variables.$DarkViolet;
+   background-repeat: no-repeat;
+   background-position: right center;
+   text-align: center;
+   padding: 90px 0;
+
+   h2 {
+      font-family: Poppins700;
+      font-size: 28px;
+      color: white;
+      letter-spacing: -0.5px;
+      margin-top: 6px;
+   }
+
+   button {
+      @include variables.Btn-GetStarted;
+      margin-top: 16px;
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      background: url('../../../assets/images/bg-boost-desktop.svg'), variables.$DarkViolet;
+      background-repeat: no-repeat;
+      background-position: right center;
+      padding: 50px 0 56px;
+
+      h2 {
+         font-size: 40px;
+         letter-spacing: -1px;
+      }
+
+      button {
+         margin-top: 22px;
+      }
+   }
+}

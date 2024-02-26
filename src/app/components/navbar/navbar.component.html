@@ -1,0 +1,22 @@
+<nav>
+  <div class="navbar">
+    <img class="navbar__logo" src="../../../assets/images/logo.svg" alt="Logo" />
+
+    <ul class="menu">
+      <li>Features</li>
+      <li>Pricing</li>
+      <li>Resources</li>
+    </ul>
+  </div>
+
+  <!-- Mobile -->
+  <button class="btn-mobile" (click)="toggleModalSignal($event)">
+    <img src="../../../assets/images/hamburger.svg" alt="Hamburger Icon" />
+  </button>
+
+  <!-- Desktop -->
+  <div class="btn-desktop">
+    <button class="login">Login</button>
+    <button class="btn-cyan register">Sing Up</button>
+  </div>
+</nav>

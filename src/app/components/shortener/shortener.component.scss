@@ -1,0 +1,103 @@
+@use '../../../sass/variables';
+
+:host {
+   display: block;
+   height: 85px;
+}
+
+.shortener {
+   display: flex;
+   flex-direction: column;
+   background: url('../../../assets/images/bg-shorten-mobile.svg'), variables.$DarkViolet;
+   background-repeat: no-repeat;
+   background-position: right top;
+   font-family: Poppins500;
+   border-radius: 10px;
+   padding: 25px;
+   transform: translateY(-50%);
+   position: relative;
+
+   input {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 5px;
+      color: variables.$VeryDarkBlue;
+
+      &,
+      &::placeholder {
+         font-size: 16px;
+         font-family: Poppins500;
+      }
+
+      &::placeholder {
+         color: variables.$GrayishViolet;
+      }
+   }
+
+   .error-text {
+      display: none;
+      text-align: start;
+      font-size: 12px;
+      margin-top: 8px;
+      color: variables.$Red;
+   }
+
+   .btn-cyan {
+      @extend %btn-cyan;
+      font-size: 18px;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 16px;
+
+      &:disabled {
+         opacity: 0.5;
+         pointer-events: none;
+      }
+   }
+
+   &.ng-invalid.ng-submitted {
+      input {
+         outline: 2px solid variables.$Red;
+
+         &::placeholder {
+            color: variables.$Red;
+         }
+      }
+
+      .error-text {
+         display: block;
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 53px 65px;
+
+      input {
+         padding: 17px 30px;
+         flex-grow: 1;
+         border-radius: 10px;
+         margin-right: 25px;
+
+         &,
+         &::placeholder {
+            font-size: 20px;
+         }
+      }
+
+      .error-text {
+         position: absolute;
+         font-size: 16px;
+         bottom: 20px;
+      }
+
+      .btn-cyan {
+         font-size: 20px;
+         padding: 16px 40px;
+         margin-top: 0;
+         border-radius: 10px;
+      }
+   }
+}

@@ -1,0 +1,29 @@
+<main>
+  <section class="shortened-urls">
+    <app-shortener></app-shortener>
+
+    <div class="shortened-urls__list">
+      @for (item of shortenedUrlList(); track item.short) {
+        <app-short-url [itemUrl]="item"></app-short-url>
+      }
+    </div>
+  </section>
+
+  <h2 class="subtitle">Advanced Statistics</h2>
+  <p class="subtitle-description">
+    Track how your links are performing across the web with our advanced statistics dashboard.
+  </p>
+
+  <section class="info">
+    <div class="info__bg"></div>
+
+    @for (item of statisticsList; track $index) {
+      <app-info-card [statistic]="item" class="info__card mt-{{ $index }}"></app-info-card>
+    }
+  </section>
+</main>
+
+<div class="boost">
+  <h2>Boost your links today</h2>
+  <button routerLink="/" fragment="shortener">Get Started</button>
+</div>

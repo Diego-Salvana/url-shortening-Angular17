@@ -1,0 +1,8 @@
+<div class="url-details">
+  <div class="url-details__long">{{ itemUrl?.long }}</div>
+
+  <div class="url-details__short">
+    <span>1pt.co/{{ itemUrl?.short }}</span>
+    <button #btnCopy class="btn-copy" (click)="copyLink()">Copy</button>
+  </div>
+</div>

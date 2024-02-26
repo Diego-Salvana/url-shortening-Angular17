@@ -1,0 +1,122 @@
+@use '../../../sass/variables';
+
+footer {
+   background-color: variables.$VeryDarkViolet;
+   padding-top: 55px;
+   padding-bottom: 50px;
+
+   .nav-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 2200px;
+      margin: auto;
+
+      &__logo {
+         margin-bottom: 5px;
+      }
+
+      &__menu .menu-item {
+         text-align: center;
+         margin-top: 37px;
+
+         h6 {
+            font-size: 15px;
+            font-weight: 500;
+            font-family: Poppins700;
+            color: white;
+         }
+
+         .options {
+            font-size: 15px;
+            font-family: Poppins500;
+            color: variables.$GrayishViolet;
+            margin-top: 22px;
+
+            li {
+               margin-bottom: 9px;
+
+               span {
+                  position: relative;
+                  letter-spacing: -0.5px;
+
+                  &:hover {
+                     color: variables.$Cyan;
+                     cursor: pointer;
+                  }
+               }
+            }
+         }
+      }
+
+      &__social-media {
+         margin-top: 40px;
+
+         * {
+            transition: all 0.1s linear;
+         }
+
+         ul {
+            display: flex;
+            justify-content: space-between;
+            width: 170px;
+
+            li:hover {
+               cursor: pointer;
+
+               path {
+                  fill: variables.$Cyan;
+               }
+            }
+         }
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      padding: 72px 0 60px;
+
+      .nav-container {
+         flex-direction: row;
+         align-items: flex-start;
+         justify-content: space-between;
+         padding: 0 variables.$paddingBodyDesktop;
+
+         &__logo {
+            flex-grow: 1;
+         }
+
+         &__menu {
+            display: flex;
+            justify-content: space-between;
+
+            .menu-item {
+               margin: 0 45px;
+               text-align: left;
+
+               &:last-child {
+                  margin-left: 60px;
+               }
+
+               h6 {
+                  font-size: 15px;
+               }
+
+               .options {
+                  font-size: 15px;
+                  margin-top: 22px;
+
+                  li {
+                     margin-bottom: 10px;
+                  }
+               }
+            }
+         }
+
+         &__social-media {
+            margin-top: 2px;
+            margin-left: 60px;
+         }
+      }
+   }
+}

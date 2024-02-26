@@ -1,0 +1,81 @@
+@use '../../../sass/variables';
+
+#mobile-nav-container {
+   position: fixed;
+   width: 100%;
+   top: 96px;
+   z-index: 1000;
+   padding: 0 24px 20px;
+   transform: translateX(0);
+   transition: all 0.2s ease-out;
+
+   &.hidden {
+      transform: translateX(100%);
+   }
+
+   .mobile-nav {
+      background-color: variables.$DarkViolet;
+      font-size: 18px;
+      font-family: Poppins700;
+      color: white;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+      padding: 38px 25px 40px;
+      margin: auto;
+      border-radius: 10px;
+
+      .menu {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+         li {
+            margin-bottom: 30px;
+            width: max-content;
+
+            &:hover {
+               cursor: pointer;
+            }
+         }
+      }
+
+      .separator {
+         background-color: variables.$GrayishViolet;
+         height: 1px;
+         max-width: 300px;
+         margin: auto;
+      }
+
+      .auth-btn-mobile {
+         display: block;
+         font-size: inherit;
+         font-family: Poppins700;
+         color: white;
+         margin: auto;
+         border: none;
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &.login {
+            background-color: inherit;
+            margin: 30px auto 26px;
+            transition: all 0.1s linear;
+
+            &:active {
+               color: variables.$GrayishViolet;
+            }
+         }
+
+         &.register {
+            @extend %btn-cyan;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 50px;
+         }
+      }
+   }
+}

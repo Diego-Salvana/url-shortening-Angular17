@@ -1,0 +1,77 @@
+@use '../../../sass/variables';
+
+header {
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: center;
+   max-width: variables.$maxWidthMain;
+   margin: auto;
+   padding-bottom: 140px;
+
+   .header-text {
+      text-align: center;
+      padding: 0 24px;
+      margin-top: 38px;
+
+      h1 {
+         @extend %title;
+         font-size: 42px;
+         margin-bottom: 12px;
+      }
+
+      p {
+         @extend %description-text;
+         font-size: 18px;
+         line-height: 1.7;
+      }
+
+      button {
+         @include variables.Btn-GetStarted;
+         margin: 30px 0;
+      }
+   }
+
+   .header-img {
+      position: relative;
+
+      img {
+         position: relative;
+         width: 510px;
+         left: 88px;
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      flex-direction: row;
+      margin-top: 20px;
+      padding-bottom: 145px;
+      max-width: 1500px;
+
+      .header-text {
+         text-align: left;
+         width: 52%;
+         padding: 0px 0px 0px variables.$paddingBodyDesktop;
+         margin-top: 22px;
+
+         h1 {
+            font-size: 80px;
+            letter-spacing: -2px;
+            margin-bottom: -2px;
+         }
+
+         p {
+            font-size: 22px;
+         }
+      }
+
+      .header-img {
+         width: 20%;
+         flex-grow: 1;
+
+         img {
+            width: 740px;
+            left: 80px;
+         }
+      }
+   }
+}

@@ -1,0 +1,7 @@
+<form [formGroup]="shortenerForm" id="shortener" class="shortener" (ngSubmit)="submitUrl()">
+  <input formControlName="url" type="text" placeholder="Shorten a link here..." />
+
+  <span class="error-text"><i>Please add a valid link</i></span>
+
+  <button #btnSubmit class="btn-cyan">Shorten It!</button>
+</form>
