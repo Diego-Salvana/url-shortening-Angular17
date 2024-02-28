@@ -1,3 +1,6 @@
+@use './sass/variables';
+@use 'sass:color';
+
 *,
 *::before,
 *::after {
@@ -15,6 +18,20 @@ body {
    min-height: 100vh;
    overflow-x: hidden;
    position: relative;
+
+   &::-webkit-scrollbar {
+      width: 8px;
+      background-color: darken(variables.$Gray, 10);
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: variables.$Cyan;
+      border-radius: 10px;
+
+      &:hover {
+         background-color: darken(variables.$Cyan, 5);
+      }
+   }
 }
 
 li {
