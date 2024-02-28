@@ -13,7 +13,7 @@ export class ShortUrlComponent {
    @Input() itemUrl?: ShortenerResponse;
    @ViewChild('btnCopy') btnCopy!: ElementRef<HTMLElement>;
 
-   copyLink() {
+   copyLink(): void {
       const btnCopyElement = this.btnCopy.nativeElement;
       const link = `1pt.co/${this.itemUrl?.short}`;
 

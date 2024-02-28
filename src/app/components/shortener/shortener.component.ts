@@ -21,7 +21,7 @@ export class ShortenerComponent {
       this.shortenerSvc.initializeList();
    }
 
-   submitUrl() {
+   submitUrl(): void {
       if (this.shortenerForm.invalid) return;
 
       const btnSubmitElement = this.btnSubmit.nativeElement;
