@@ -9,21 +9,23 @@
     </div>
   </section>
 
-  <h2 class="subtitle">Advanced Statistics</h2>
-  <p class="subtitle-description">
-    Track how your links are performing across the web with our advanced statistics dashboard.
-  </p>
+  <section class="statistics">
+    <h2 class="statistics__title">Advanced Statistics</h2>
+    <p class="statistics__title-description">
+      Track how your links are performing across the web with our advanced statistics dashboard.
+    </p>
 
-  <section class="info">
-    <div class="info__bg"></div>
+    <div class="statistics__info">
+      <div class="info-bg"></div>
 
-    @for (item of statisticsList; track $index) {
-      <app-info-card [statistic]="item" class="info__card mt-{{ $index }}"></app-info-card>
-    }
+      @for (item of statisticsList; track $index) {
+        <app-info-card [statistic]="item" class="mt-{{ $index }}"></app-info-card>
+      }
+    </div>
   </section>
 </main>
 
-<div class="boost">
+<section class="boost">
   <h2>Boost your links today</h2>
   <button routerLink="/" fragment="shortener">Get Started</button>
-</div>
+</section>
